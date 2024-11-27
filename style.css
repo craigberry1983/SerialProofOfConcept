@@ -1,0 +1,15 @@
+
+  p {
+    color: white;
+  }
+
+  #terminalHistory {
+    min-height: 400px;
+    max-height: 400px;
+    background-color: black;
+    overflow: auto;
+  }
+
+  .sent {
+    color: gray;
+  }
