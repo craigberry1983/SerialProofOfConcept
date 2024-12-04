@@ -3,49 +3,24 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
 		<title>Serial Terminal</title>
-		<style>
-			body {
-				font-family: Arial, sans-serif;
-				margin: 0;
-				padding: 0;
-				display: flex;
-				flex-direction: column;
-				height: 100vh;
-			}
-			#terminal {
-				flex: 1;
-				overflow-y: auto;
-				background-color: #1e1e1e;
-				color: #ffffff;
-				padding: 10px;
-				border: 1px solid #333;
-			}
-			#input-bar {
-				display: flex;
-				gap: 10px;
-				padding: 10px;
-				border-top: 1px solid #333;
-				background-color: #f4f4f4;
-			}
-			#input-bar input {
-				flex: 1;
-				padding: 5px;
-				font-size: 1rem;
-			}
-			#input-bar button {
-				padding: 5px 10px;
-				font-size: 1rem;
-			}
-		</style>
 	</head>
 	<body>
-		<div id="terminal"></div>
-		<div id="input-bar">
-			<input type="text" id="commandInput" placeholder="Type a command..." />
-			<button id="sendButton">Send</button>
-			<button id="connectButton">Connect</button>
+		<div id="warning">
+			<h3>Your browser does not support the Web Serial API.<br />Please use a supported browser (Chrome / Edge / Opera)</h3>
 		</div>
+		<div id="content">
+			<div id="terminal">
+				<div id="terminal-history"></div>
+				<div id="input-bar">
+					<input type="text" id="commandInput" placeholder="Type a command..." />
+					<button id="sendButton">Send</button>
+					<button id="connectButton">Connect</button>
+				</div>
+			</div>
+		</div>
+
 		<script type="module" src="terminal.js"></script>
 	</body>
 </html>

@@ -1,0 +1,9 @@
+• Make a commandManager script and realize the sending of all commands level 0 to 4. Commands to be sent with a purpose.
+
+• Make a receive method that takes the purpose of a full response and changes things as needed, shows notifications etc. 
+
+• Make the UI of the Navigation Bar
+
+• Make the UI of the Action Bar
+
+• 

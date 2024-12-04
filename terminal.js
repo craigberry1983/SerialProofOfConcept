@@ -5,7 +5,7 @@ import { CommunicationBuffer } from "./communicationBuffer.js";
 class Terminal {
 	constructor() {
 		// Initialize terminal elements
-		this.terminalDiv = document.getElementById("terminal");
+		this.terminalDiv = document.getElementById("terminal-history");
 		this.commandInput = document.getElementById("commandInput");
 		this.sendButton = document.getElementById("sendButton");
 		this.connectButton = document.getElementById("connectButton");
@@ -115,4 +115,13 @@ class Terminal {
 // Initialize the terminal once the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
 	const terminal = new Terminal();
+
+	const warning = document.getElementById("warning");
+	const content = document.getElementById("content");
+
+	if (!navigator.serial) {
+		warning.style.display = "flex";
+	} else {
+		content.style.display = "block";
+	}
 });

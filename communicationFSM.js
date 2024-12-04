@@ -95,9 +95,15 @@ export class CommunicationFSM {
 				break;
 
 			case CommunicationFSM.States.SEND:
-				const command = this.commandQueue.shift();
-				if (command) {
-					await this.connectionManager.write(command.command);
+				const cmd = this.commandQueue.shift();
+				if (cmd) {
+					//anything except stream cancellation or custom name specification can be converted to uppercase
+					//TODO: stop custom names being converted to uppercase
+					cmd.command = cmd.command.trim();
+					if (cmd.command !== "c") {
+						cmd.command = cmd.command.toUpperCase();
+					}
+					await this.connectionManager.write(cmd.command);
 					this.changeState(CommunicationFSM.States.RECEIVE);
 				}
 				break;
